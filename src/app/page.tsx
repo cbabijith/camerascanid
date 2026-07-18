@@ -89,15 +89,15 @@ function HomeContent() {
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand/[0.05] rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-[-5%] left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-brand/[0.03] rounded-full blur-[100px] pointer-events-none" />
 
-      {/* Main content */}
-      <main className="relative flex-1 flex flex-col items-center justify-center px-4 xs:px-5 sm:px-6 overflow-y-auto no-scrollbar min-h-0 z-10 safe-top">
-        <div className="responsive-container w-full flex flex-col items-center">
+      {/* Main content — scrollable if needed, but compact enough to fit */}
+      <main className="relative flex-1 flex flex-col items-center justify-center px-4 xs:px-5 sm:px-6 overflow-y-auto no-scrollbar min-h-0 z-10 safe-top py-2">
+        <div className="responsive-container w-full flex flex-col items-center my-auto">
           {/* Logo */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-            className="relative mb-3 xs:mb-4 sm:mb-5"
+            transition={{ duration: 0.5 }}
+            className="relative mb-2 xs:mb-3 sm:mb-5"
           >
             <div className="absolute inset-0 blur-2xl opacity-20 bg-brand rounded-full" />
             <div className="responsive-logo relative">
@@ -109,62 +109,62 @@ function HomeContent() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.25 }}
-            className="flex items-center gap-2 mb-4 xs:mb-5 sm:mb-6"
+            transition={{ delay: 0.2 }}
+            className="flex items-center gap-1.5 xs:gap-2 mb-3 xs:mb-4 sm:mb-6"
           >
-            <span className="w-5 xs:w-6 h-px bg-gray-300 dark:bg-gray-700" />
-            <p className="text-[10px] xs:text-[11px] text-gray-400 font-semibold tracking-[0.12em] xs:tracking-[0.15em] uppercase">
+            <span className="w-4 xs:w-6 h-px bg-gray-300 dark:bg-gray-700" />
+            <p className="text-[9px] xs:text-[11px] text-gray-400 font-semibold tracking-[0.1em] xs:tracking-[0.15em] uppercase">
               MD · {BUSINESS.md}
             </p>
-            <span className="w-5 xs:w-6 h-px bg-gray-300 dark:bg-gray-700" />
+            <span className="w-4 xs:w-6 h-px bg-gray-300 dark:bg-gray-700" />
           </motion.div>
 
           {/* Services pills */}
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
+            initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35 }}
-            className="flex flex-wrap justify-center gap-1.5 xs:gap-2 mb-4 xs:mb-5 sm:mb-6 w-full max-w-[340px]"
+            transition={{ delay: 0.3 }}
+            className="flex flex-wrap justify-center gap-1 xs:gap-2 mb-3 xs:mb-5 sm:mb-6 w-full max-w-[340px]"
           >
             {SERVICES.map((s, i) => (
               <motion.span
                 key={s.label}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.35 + i * 0.06 }}
-                className="flex items-center gap-1.5 px-2.5 xs:px-3.5 py-1.5 xs:py-2 rounded-full bg-white dark:bg-[#141414] border border-gray-100 dark:border-gray-800/60 text-[10px] xs:text-xs font-semibold shadow-sm"
+                transition={{ delay: 0.3 + i * 0.05 }}
+                className="flex items-center gap-1 px-2 xs:px-3.5 py-1 xs:py-2 rounded-full bg-white dark:bg-[#141414] border border-gray-100 dark:border-gray-800/60 text-[9px] xs:text-xs font-semibold shadow-sm"
               >
-                <s.icon className="w-3 xs:w-3.5 xs:h-3.5 h-3 text-brand" />
+                <s.icon className="w-2.5 h-2.5 xs:w-3.5 xs:h-3.5 text-brand" />
                 {s.label}
               </motion.span>
             ))}
           </motion.div>
 
-          {/* Phone numbers */}
+          {/* Phone numbers — compact on SE */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45 }}
-            className="w-full max-w-[340px] space-y-1.5 xs:space-y-2 mb-1.5 xs:mb-2"
+            transition={{ delay: 0.4 }}
+            className="w-full max-w-[340px] space-y-1 xs:space-y-1.5 sm:space-y-2 mb-1 xs:mb-2"
           >
             {PHONE_NUMBERS.map((p, i) => (
               <motion.a
                 key={p.label}
                 href={`tel:${p.raw}`}
-                initial={{ opacity: 0, x: -10 }}
+                initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.45 + i * 0.08 }}
-                className="lux-card flex items-center gap-2.5 xs:gap-3 sm:gap-3.5 w-full py-2.5 xs:py-3 sm:py-3.5 px-3 xs:px-4 rounded-xl xs:rounded-2xl"
+                transition={{ delay: 0.4 + i * 0.07 }}
+                className="lux-card flex items-center gap-2 xs:gap-3 sm:gap-3.5 w-full py-2 xs:py-2.5 sm:py-3.5 px-2.5 xs:px-4 rounded-lg xs:rounded-xl sm:rounded-2xl"
               >
-                <div className="w-9 h-9 xs:w-10 xs:h-10 sm:w-11 sm:h-11 rounded-lg xs:rounded-xl bg-gradient-to-br from-brand/10 to-brand/5 flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-4 h-4 xs:w-[18px] xs:h-[18px] sm:w-5 sm:h-5 text-brand" />
+                <div className="w-8 h-8 xs:w-10 xs:h-10 sm:w-11 sm:h-11 rounded-lg xs:rounded-xl bg-gradient-to-br from-brand/10 to-brand/5 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-3.5 h-3.5 xs:w-[18px] xs:h-[18px] sm:w-5 sm:h-5 text-brand" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[8px] xs:text-[9px] font-bold tracking-[0.1em] xs:tracking-[0.12em] uppercase text-gray-400 mb-0.5">{p.sub}</p>
-                  <p className="text-[13px] xs:text-[14px] sm:text-[15px] font-bold tracking-tight">{p.number}</p>
-                  <p className="text-[9px] xs:text-[10px] text-gray-400 font-medium mt-0.5">{p.label}</p>
+                  <p className="text-[7px] xs:text-[9px] font-bold tracking-[0.08em] xs:tracking-[0.12em] uppercase text-gray-400 leading-tight">{p.sub}</p>
+                  <p className="text-[12px] xs:text-[14px] sm:text-[15px] font-bold tracking-tight leading-tight">{p.number}</p>
+                  <p className="text-[8px] xs:text-[10px] text-gray-400 font-medium leading-tight">{p.label}</p>
                 </div>
-                <ChevronRight className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-gray-300 flex-shrink-0" />
+                <ChevronRight className="w-3 xs:w-4 xs:h-4 h-3 text-gray-300 flex-shrink-0" />
               </motion.a>
             ))}
           </motion.div>
@@ -172,62 +172,62 @@ function HomeContent() {
           {/* Email card */}
           <motion.a
             href={`mailto:${BUSINESS.email}`}
-            initial={{ opacity: 0, x: -10 }}
+            initial={{ opacity: 0, x: -8 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.69 }}
-            className="lux-card flex items-center gap-2.5 xs:gap-3 sm:gap-3.5 w-full max-w-[340px] py-2.5 xs:py-3 sm:py-3.5 px-3 xs:px-4 rounded-xl xs:rounded-2xl mb-3 xs:mb-4 sm:mb-5"
+            transition={{ delay: 0.6 }}
+            className="lux-card flex items-center gap-2 xs:gap-3 sm:gap-3.5 w-full max-w-[340px] py-2 xs:py-2.5 sm:py-3.5 px-2.5 xs:px-4 rounded-lg xs:rounded-xl sm:rounded-2xl mb-2 xs:mb-4 sm:mb-5"
           >
-            <div className="w-9 h-9 xs:w-10 xs:h-10 sm:w-11 sm:h-11 rounded-lg xs:rounded-xl bg-gradient-to-br from-brand/10 to-brand/5 flex items-center justify-center flex-shrink-0">
-              <Mail className="w-4 h-4 xs:w-[18px] xs:h-[18px] sm:w-5 sm:h-5 text-brand" />
+            <div className="w-8 h-8 xs:w-10 xs:h-10 sm:w-11 sm:h-11 rounded-lg xs:rounded-xl bg-gradient-to-br from-brand/10 to-brand/5 flex items-center justify-center flex-shrink-0">
+              <Mail className="w-3.5 h-3.5 xs:w-[18px] xs:h-[18px] sm:w-5 sm:h-5 text-brand" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-[8px] xs:text-[9px] font-bold tracking-[0.1em] xs:tracking-[0.12em] uppercase text-gray-400 mb-0.5">Email</p>
-              <p className="text-[13px] xs:text-[14px] sm:text-[15px] font-bold tracking-tight truncate">{BUSINESS.email}</p>
+              <p className="text-[7px] xs:text-[9px] font-bold tracking-[0.08em] xs:tracking-[0.12em] uppercase text-gray-400 leading-tight">Email</p>
+              <p className="text-[12px] xs:text-[14px] sm:text-[15px] font-bold tracking-tight truncate leading-tight">{BUSINESS.email}</p>
             </div>
-            <ChevronRight className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-gray-300 flex-shrink-0" />
+            <ChevronRight className="w-3 xs:w-4 xs:h-4 h-3 text-gray-300 flex-shrink-0" />
           </motion.a>
 
           {/* Save contact */}
           <motion.button
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.75 }}
+            transition={{ delay: 0.65 }}
             onClick={handleSaveContact}
-            className="lux-btn-primary ripple w-full max-w-[340px] flex items-center justify-center gap-2.5 text-white rounded-xl xs:rounded-2xl py-3 xs:py-3.5 sm:py-4 font-bold text-[13px] xs:text-[14px] sm:text-[15px] mb-2 xs:mb-2.5"
+            className="lux-btn-primary ripple w-full max-w-[340px] flex items-center justify-center gap-2 text-white rounded-lg xs:rounded-xl sm:rounded-2xl py-2.5 xs:py-3 sm:py-4 font-bold text-[12px] xs:text-[14px] sm:text-[15px] mb-1.5 xs:mb-2.5"
           >
             {saved ? <Check className="w-4 h-4 xs:w-5 xs:h-5" /> : <UserPlus className="w-4 h-4 xs:w-5 xs:h-5" />}
-            {saved ? "Contact Saved!" : "Save Contact"}
+            {saved ? "Saved!" : "Save Contact"}
           </motion.button>
 
           {/* WhatsApp + Share + QR */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="flex items-center gap-2 xs:gap-2.5 w-full max-w-[340px] mb-4 xs:mb-5 sm:mb-6"
+            transition={{ delay: 0.7 }}
+            className="flex items-center gap-1.5 xs:gap-2.5 w-full max-w-[340px] mb-3 xs:mb-5 sm:mb-6"
           >
             <a
               href={`${BUSINESS.whatsapp}?text=${encodeURIComponent(BUSINESS.whatsappMessage)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="lux-btn-outline ripple flex-1 flex items-center justify-center gap-1.5 xs:gap-2 rounded-lg xs:rounded-xl py-2 xs:py-2.5 sm:py-3 text-[11px] xs:text-[13px] sm:text-sm font-semibold"
+              className="lux-btn-outline ripple flex-1 flex items-center justify-center gap-1 xs:gap-2 rounded-lg xs:rounded-xl py-1.5 xs:py-2.5 sm:py-3 text-[10px] xs:text-[13px] sm:text-sm font-semibold"
             >
-              <WhatsAppIcon className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-[#25D366]" />
+              <WhatsAppIcon className="w-3 xs:w-4 xs:h-4 h-3 text-[#25D366]" />
               WhatsApp
             </a>
             <button
               onClick={handleShare}
-              className="lux-btn-outline ripple flex-1 flex items-center justify-center gap-1.5 xs:gap-2 rounded-lg xs:rounded-xl py-2 xs:py-2.5 sm:py-3 text-[11px] xs:text-[13px] sm:text-sm font-semibold"
+              className="lux-btn-outline ripple flex-1 flex items-center justify-center gap-1 xs:gap-2 rounded-lg xs:rounded-xl py-1.5 xs:py-2.5 sm:py-3 text-[10px] xs:text-[13px] sm:text-sm font-semibold"
             >
-              <Share2 className="w-3.5 h-3.5 xs:w-4 xs:h-4" />
+              <Share2 className="w-3 xs:w-4 xs:h-4 h-3" />
               Share
             </button>
             <button
               onClick={() => setQrOpen(true)}
-              className="lux-btn-outline ripple w-9 h-[34px] xs:w-11 xs:h-[42px] sm:w-12 sm:h-[46px] flex items-center justify-center rounded-lg xs:rounded-xl"
+              className="lux-btn-outline ripple w-8 h-[30px] xs:w-11 xs:h-[42px] sm:w-12 sm:h-[46px] flex items-center justify-center rounded-lg xs:rounded-xl"
               aria-label="QR Code"
             >
-              <QrCode className="w-3.5 h-3.5 xs:w-4 xs:h-4" />
+              <QrCode className="w-3 xs:w-4 xs:h-4 h-3" />
             </button>
           </motion.div>
 
@@ -235,16 +235,16 @@ function HomeContent() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.85 }}
-            className="lux-divider w-full max-w-[340px] mb-3 xs:mb-4 sm:mb-5"
+            transition={{ delay: 0.75 }}
+            className="lux-divider w-full max-w-[340px] mb-2 xs:mb-4 sm:mb-5"
           />
 
           {/* Social links */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-            className="flex items-center gap-2 xs:gap-2.5 sm:gap-3"
+            transition={{ delay: 0.8 }}
+            className="flex items-center gap-1.5 xs:gap-2.5 sm:gap-3"
           >
             {SOCIALS.map((s) => (
               <a
@@ -252,10 +252,10 @@ function HomeContent() {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="lux-social w-9 h-9 xs:w-11 xs:h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center"
+                className="lux-social w-8 h-8 xs:w-11 xs:h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center"
                 aria-label={s.label}
               >
-                <s.icon className="w-4 h-4 xs:w-[18px] xs:h-[18px] sm:w-5 sm:h-5" />
+                <s.icon className="w-3.5 h-3.5 xs:w-[18px] xs:h-[18px] sm:w-5 sm:h-5" />
               </a>
             ))}
           </motion.div>
@@ -263,8 +263,8 @@ function HomeContent() {
       </main>
 
       {/* Footer */}
-      <footer className="relative flex-shrink-0 px-4 xs:px-5 pb-3 xs:pb-4 safe-bottom text-center z-10">
-        <p className="text-[9px] xs:text-[10px] text-gray-400 font-medium tracking-wide">
+      <footer className="relative flex-shrink-0 px-3 xs:px-5 pb-2 xs:pb-4 safe-bottom text-center z-10">
+        <p className="text-[8px] xs:text-[10px] text-gray-400 font-medium tracking-wide leading-tight">
           {BUSINESS.location.full} · Since {BUSINESS.established}
         </p>
       </footer>

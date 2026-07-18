@@ -220,27 +220,27 @@ body {
 
 /* Base (mobile-first) — iPhone SE 320px */
 .responsive-logo {
-  width: 9.5rem;
-  height: 4rem;
+  width: 8rem;
+  height: 3.25rem;
 }
 
-/* Galaxy S23 small / iPhone SE — 360px+ */
+/* 360px+ — Galaxy S23 */
 @media (min-width: 360px) {
   .responsive-logo {
-    width: 11rem;
-    height: 4.75rem;
+    width: 10rem;
+    height: 4.25rem;
   }
 }
 
-/* Standard phones — 390px+ (iPhone 14/15, Galaxy S23) */
+/* 390px+ — iPhone 14/15 */
 @media (min-width: 390px) {
   .responsive-logo {
-    width: 12.5rem;
-    height: 5.25rem;
+    width: 12rem;
+    height: 5rem;
   }
 }
 
-/* Larger phones — 430px+ (iPhone Pro Max, S23 Ultra) */
+/* 430px+ — Pro Max / S23 Ultra */
 @media (min-width: 430px) {
   .responsive-logo {
     width: 14rem;
