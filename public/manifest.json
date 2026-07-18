@@ -1,0 +1,18 @@
+{
+  "name": "Camera Scan - Trusted Camera Sales, Service & Rental Since 1993",
+  "short_name": "Camera Scan",
+  "description": "Professional camera sales, repair, rental services, used cameras, accessories, and authorized servicing for leading brands. Since 1993.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#E30613",
+  "icons": [
+    {
+      "src": "/camerasc.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
