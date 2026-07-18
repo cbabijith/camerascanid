@@ -132,9 +132,9 @@ function HomeContent() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 + i * 0.05 }}
-                className="flex items-center gap-1 px-2 xs:px-3.5 py-1 xs:py-2 rounded-full bg-white dark:bg-[#141414] border border-gray-100 dark:border-gray-800/60 text-[9px] xs:text-xs font-semibold shadow-sm"
+                className="flex items-center gap-1.5 px-3 xs:px-4 py-1.5 xs:py-2 rounded-full bg-gradient-to-br from-white to-gray-50 dark:from-[#161616] dark:to-[#121212] border border-gray-200/60 dark:border-gray-700/40 text-[10px] xs:text-xs font-bold tracking-wide shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
               >
-                <s.icon className="w-2.5 h-2.5 xs:w-3.5 xs:h-3.5 text-brand" />
+                <s.icon className="w-3 xs:w-3.5 xs:h-3.5 h-3 text-brand" />
                 {s.label}
               </motion.span>
             ))}
