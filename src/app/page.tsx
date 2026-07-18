@@ -90,7 +90,7 @@ function HomeContent() {
       <div className="absolute bottom-[-5%] left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-brand/[0.03] rounded-full blur-[100px] pointer-events-none" />
 
       {/* Main content */}
-      <main className="relative flex-1 flex flex-col items-center justify-center px-5 sm:px-6 overflow-y-auto no-scrollbar min-h-0 z-10 safe-top">
+      <main className="responsive-padding relative flex-1 flex flex-col items-center justify-center px-5 sm:px-6 overflow-y-auto no-scrollbar min-h-0 z-10 safe-top">
         <div className="responsive-container w-full flex flex-col items-center">
           {/* Logo with subtle glow */}
           <motion.div
@@ -100,7 +100,7 @@ function HomeContent() {
             className="relative mb-4 sm:mb-5"
           >
             <div className="absolute inset-0 blur-2xl opacity-20 bg-brand rounded-full" />
-            <div className="responsive-logo relative w-56 h-24">
+            <div className="responsive-logo relative">
               <Image src="/camerasc.svg" alt="Camera Scan" fill className="object-contain" priority />
             </div>
           </motion.div>

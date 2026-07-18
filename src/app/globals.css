@@ -218,26 +218,57 @@ body {
 
 /* === RESPONSIVE === */
 
-/* Small Samsung phones (360px) */
-@media (max-width: 380px) {
+/* Base responsive logo — uses vw units for fluid scaling */
+.responsive-logo {
+  width: 14rem;
+  height: 6rem;
+}
+
+/* Very small phones — iPhone SE (320px), Galaxy S23 small (360px) */
+@media (max-width: 360px) {
   .responsive-logo {
-    width: 11rem !important;
-    height: 5rem !important;
-  }
-  .responsive-padding {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    width: 10rem !important;
+    height: 4.25rem !important;
   }
   .responsive-maxw {
     max-width: 100% !important;
   }
+  .responsive-card {
+    padding-top: 0.625rem !important;
+    padding-bottom: 0.625rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  .responsive-compact {
+    margin-bottom: 0.75rem !important;
+  }
 }
 
-/* iPhone SE / small phones */
-@media (max-width: 390px) {
+/* Small phones — Galaxy S23 (375px), iPhone SE 3rd gen (375px) */
+@media (min-width: 361px) and (max-width: 390px) {
+  .responsive-logo {
+    width: 11.5rem !important;
+    height: 5rem !important;
+  }
   .responsive-card {
     padding-top: 0.75rem !important;
     padding-bottom: 0.75rem !important;
+  }
+}
+
+/* Standard phones — iPhone 14/15 (390px-430px) */
+@media (min-width: 391px) and (max-width: 480px) {
+  .responsive-logo {
+    width: 13rem !important;
+    height: 5.5rem !important;
+  }
+}
+
+/* Large phones — iPhone Pro Max, Galaxy S23 Ultra (430px+) */
+@media (min-width: 481px) and (max-width: 639px) {
+  .responsive-logo {
+    width: 15rem !important;
+    height: 6.5rem !important;
   }
 }
 
@@ -281,8 +312,8 @@ body {
 /* iPhone landscape — compact */
 @media (max-height: 500px) and (orientation: landscape) {
   .responsive-logo {
-    width: 10rem !important;
-    height: 4rem !important;
+    width: 9rem !important;
+    height: 3.75rem !important;
     margin-bottom: 0.5rem !important;
   }
   .responsive-compact {
