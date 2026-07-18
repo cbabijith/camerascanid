@@ -12,8 +12,8 @@ import {
   X,
   Camera,
   Wrench,
-  Download,
   Star,
+  Briefcase,
   Instagram,
   Facebook,
   Youtube,
@@ -36,7 +36,7 @@ const SERVICES = [
   { icon: Camera, label: "Sales" },
   { icon: Star, label: "Used Cameras" },
   { icon: Wrench, label: "Service" },
-  { icon: Download, label: "Rentals" },
+  { icon: Briefcase, label: "Rentals" },
 ];
 
 const SOCIALS = [
