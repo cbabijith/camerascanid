@@ -87,7 +87,7 @@ function HomeContent() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-brand/[0.04] rounded-full blur-[120px] pointer-events-none" />
 
       {/* Main content */}
-      <main className="relative flex-1 flex flex-col items-center justify-center px-5 sm:px-6 overflow-y-auto no-scrollbar min-h-0 z-10 safe-top">
+      <main className="relative flex-1 flex flex-col items-center justify-center px-5 sm:px-6 pt-10 pb-2 overflow-y-auto no-scrollbar min-h-0 z-10 safe-top">
         <div className="responsive-container w-full flex flex-col items-center">
           {/* Logo */}
           <div className="relative mb-4">
