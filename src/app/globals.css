@@ -218,61 +218,37 @@ body {
 
 /* === RESPONSIVE === */
 
-/* Base responsive logo — uses vw units for fluid scaling */
+/* Base (mobile-first) — iPhone SE 320px */
 .responsive-logo {
-  width: 14rem;
-  height: 6rem;
+  width: 9.5rem;
+  height: 4rem;
 }
 
-/* Very small phones — iPhone SE (320px), Galaxy S23 small (360px) */
-@media (max-width: 360px) {
+/* Galaxy S23 small / iPhone SE — 360px+ */
+@media (min-width: 360px) {
   .responsive-logo {
-    width: 10rem !important;
-    height: 4.25rem !important;
-  }
-  .responsive-maxw {
-    max-width: 100% !important;
-  }
-  .responsive-card {
-    padding-top: 0.625rem !important;
-    padding-bottom: 0.625rem !important;
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
-  }
-  .responsive-compact {
-    margin-bottom: 0.75rem !important;
+    width: 11rem;
+    height: 4.75rem;
   }
 }
 
-/* Small phones — Galaxy S23 (375px), iPhone SE 3rd gen (375px) */
-@media (min-width: 361px) and (max-width: 390px) {
+/* Standard phones — 390px+ (iPhone 14/15, Galaxy S23) */
+@media (min-width: 390px) {
   .responsive-logo {
-    width: 11.5rem !important;
-    height: 5rem !important;
-  }
-  .responsive-card {
-    padding-top: 0.75rem !important;
-    padding-bottom: 0.75rem !important;
+    width: 12.5rem;
+    height: 5.25rem;
   }
 }
 
-/* Standard phones — iPhone 14/15 (390px-430px) */
-@media (min-width: 391px) and (max-width: 480px) {
+/* Larger phones — 430px+ (iPhone Pro Max, S23 Ultra) */
+@media (min-width: 430px) {
   .responsive-logo {
-    width: 13rem !important;
-    height: 5.5rem !important;
+    width: 14rem;
+    height: 6rem;
   }
 }
 
-/* Large phones — iPhone Pro Max, Galaxy S23 Ultra (430px+) */
-@media (min-width: 481px) and (max-width: 639px) {
-  .responsive-logo {
-    width: 15rem !important;
-    height: 6.5rem !important;
-  }
-}
-
-/* Tablets — center content with more breathing room */
+/* Tablets — 640px+ */
 @media (min-width: 640px) {
   .responsive-container {
     max-width: 420px !important;
@@ -280,12 +256,12 @@ body {
     margin-right: auto !important;
   }
   .responsive-logo {
-    width: 16rem !important;
-    height: 7rem !important;
+    width: 16rem;
+    height: 7rem;
   }
 }
 
-/* Laptops / desktops — premium centered card */
+/* Laptops / desktops — 1024px+ */
 @media (min-width: 1024px) {
   .responsive-shell {
     background: linear-gradient(180deg, #f0f0f0 0%, #e8e8e8 100%);
@@ -297,12 +273,12 @@ body {
     max-width: 440px !important;
   }
   .responsive-logo {
-    width: 18rem !important;
-    height: 7.5rem !important;
+    width: 18rem;
+    height: 7.5rem;
   }
 }
 
-/* Large desktops */
+/* Large desktops — 1440px+ */
 @media (min-width: 1440px) {
   .responsive-container {
     max-width: 480px !important;
