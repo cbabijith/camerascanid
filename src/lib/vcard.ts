@@ -21,16 +21,9 @@ export function generateVCard(): string {
 
 export function downloadVCard() {
   const vcard = generateVCard();
-
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-  if (isIOS) {
-    const dataUri = `data:text/vcard;charset=utf-8,${encodeURIComponent(vcard)}`;
-    window.location.href = dataUri;
-    return;
-  }
-
   const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
   const url = URL.createObjectURL(blob);
+
   const a = document.createElement("a");
   a.href = url;
   a.download = "CameraScan.vcf";
@@ -38,7 +31,7 @@ export function downloadVCard() {
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
 }
 
 export async function saveContactNative(): Promise<boolean> {
