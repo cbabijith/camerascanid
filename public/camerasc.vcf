@@ -1,8 +1,8 @@
 BEGIN:VCARD
 VERSION:3.0
-N:Camera;Scan;;;
-FN:Camera Scan
-ORG:Camera Scan
+N:CameraScan;;;;
+FN:CameraScan
+ORG:CameraScan
 TITLE:Camera Sales, Service & Rental
 TEL;TYPE=WORK,VOICE:0481-2568876
 TEL;TYPE=CELL:8301870721

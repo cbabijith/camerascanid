@@ -4,8 +4,8 @@ export function generateVCard(): string {
   return [
     "BEGIN:VCARD",
     "VERSION:3.0",
-    "N:Camera;Scan;;;",
-    `FN:${BUSINESS.name}`,
+    "N:CameraScan;;;;",
+    "FN:CameraScan",
     `ORG:${BUSINESS.name}`,
     `TITLE:Camera Sales, Service & Rental`,
     `TEL;TYPE=WORK,VOICE:${BUSINESS.phone}`,
