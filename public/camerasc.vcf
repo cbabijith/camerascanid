@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Camera;Scan;;;
+FN:Camera Scan
+ORG:Camera Scan
+TITLE:Camera Sales, Service & Rental
+TEL;TYPE=WORK,VOICE:0481-2568876
+TEL;TYPE=CELL:8301870721
+TEL;TYPE=CELL:9188526787
+EMAIL;TYPE=WORK:camerascan@gmail.com
+URL:https://www.camerascan.org
+ADR;TYPE=WORK:;;YMCA Buildings, Sastri Road;Kottayam;;Kerala;IN
+NOTE:MD: Abey K George. Trusted Camera Sales, Service & Rental Since 1994.
+END:VCARD

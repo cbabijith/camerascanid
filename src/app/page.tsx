@@ -136,10 +136,11 @@ function HomeContent() {
             <ChevronRight className="w-4 h-4 text-gray-300 flex-shrink-0" />
           </a>
 
-          {/* Save contact — real <a> link for iOS Safari compatibility */}
+          {/* Save contact — static .vcf file for iOS Safari compatibility */}
           <a
-            href="/contact.vcf"
-            onClick={() => { setSaved(true); showToast("Opening contacts..."); setTimeout(() => setSaved(false), 2000); }}
+            href="/camerasc.vcf"
+            download="CameraScan.vcf"
+            onClick={() => { setSaved(true); showToast("Opening contacts..."); setTimeout(() => setSaved(false), 2500); }}
             className="lux-btn-primary ripple w-full max-w-[340px] flex items-center justify-center gap-2.5 text-white rounded-2xl py-3.5 font-bold text-[14px] mb-2.5"
           >
             {saved ? <Check className="w-5 h-5" /> : <UserPlus className="w-5 h-5" />}
