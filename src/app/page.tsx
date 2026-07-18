@@ -38,6 +38,7 @@ const SOCIALS = [
   { icon: Instagram, label: "Instagram", href: BUSINESS.instagram },
   { icon: Facebook, label: "Facebook", href: BUSINESS.facebook },
   { icon: Youtube, label: "YouTube", href: BUSINESS.youtube },
+  { icon: Mail, label: "Email", href: `mailto:${BUSINESS.email}` },
   { icon: Globe, label: "Website", href: BUSINESS.website },
 ];
 
@@ -121,22 +122,7 @@ function HomeContent() {
             ))}
           </div>
 
-          {/* Email card */}
-          <a
-            href={`mailto:${BUSINESS.email}`}
-            className="lux-card flex items-center gap-3 w-full max-w-[340px] py-3 px-4 rounded-2xl mb-4"
-          >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand/10 to-brand/5 flex items-center justify-center flex-shrink-0">
-              <Mail className="w-[18px] h-[18px] text-brand" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-[9px] font-bold tracking-[0.1em] uppercase text-gray-400 mb-0.5">Email</p>
-              <p className="text-[14px] font-bold tracking-tight truncate">{BUSINESS.email}</p>
-            </div>
-            <ChevronRight className="w-4 h-4 text-gray-300 flex-shrink-0" />
-          </a>
-
-          {/* Save contact — static .vcf file for iOS Safari compatibility */}
+{/* Save contact — static .vcf file for iOS Safari compatibility */}
           <a
             href="/camerasc.vcf"
             download="CameraScan.vcf"
