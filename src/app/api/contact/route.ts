@@ -16,7 +16,7 @@ export function generateVCard(): string {
     `ADR;TYPE=WORK:;;${BUSINESS.location.building}, ${BUSINESS.location.street};${BUSINESS.location.city};;Kerala;IN`,
     `NOTE:MD: ${BUSINESS.md}. Trusted Camera Sales, Service & Rental Since ${BUSINESS.established}.`,
     "END:VCARD",
-  ].join("\r\n");
+  ].join("\r\n") + "\r\n";
 }
 
 export async function GET() {
@@ -24,9 +24,10 @@ export async function GET() {
 
   return new Response(vcard, {
     headers: {
-      "Content-Type": "text/vcard;charset=utf-8",
-      "Content-Disposition": 'attachment; filename="CameraScan.vcf"',
+      "Content-Type": "text/x-vcard;charset=utf-8",
+      "Content-Disposition": 'inline; filename="CameraScan.vcf"',
       "Cache-Control": "no-cache, no-store, must-revalidate",
+      "Content-Length": vcard.length.toString(),
     },
   });
 }
