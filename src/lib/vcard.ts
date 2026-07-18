@@ -14,24 +14,15 @@ export function generateVCard(): string {
     `EMAIL;TYPE=WORK:${BUSINESS.email}`,
     `URL:${BUSINESS.website}`,
     `ADR;TYPE=WORK:;;${BUSINESS.location.building}, ${BUSINESS.location.street};${BUSINESS.location.city};;Kerala;IN`,
-    `NOTE:MD: ${BUSINESS.md}. Trusted Camera Sales\, Service & Rental Since ${BUSINESS.established}.`,
+    `NOTE:MD: ${BUSINESS.md}. Trusted Camera Sales, Service & Rental Since ${BUSINESS.established}.`,
     "END:VCARD",
   ].join("\r\n");
 }
 
 export function downloadVCard() {
-  const vcard = generateVCard();
-  const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "CameraScan.vcf";
-  a.rel = "noopener";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  setTimeout(() => URL.revokeObjectURL(url), 2000);
+  // Navigate to server route that serves .vcf with proper Content-Type
+  // iOS Safari recognizes text/vcard and opens the Contacts app
+  window.location.href = "/contact.vcf";
 }
 
 export async function saveContactNative(): Promise<boolean> {
