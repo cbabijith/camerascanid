@@ -23,9 +23,6 @@ import Image from "next/image";
 import { ToastProvider, useToast } from "@/components/ToastProvider";
 import { BUSINESS } from "@/lib/utils";
 import {
-  downloadVCard,
-  saveContactNative,
-  isContactsAPISupported,
 } from "@/lib/vcard";
 import { QRCodeSVG } from "qrcode.react";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
@@ -54,22 +51,6 @@ function HomeContent() {
   const { showToast } = useToast();
   const [qrOpen, setQrOpen] = useState(false);
   const [saved, setSaved] = useState(false);
-
-  const handleSaveContact = async () => {
-    if (isContactsAPISupported()) {
-      const ok = await saveContactNative();
-      if (ok) {
-        setSaved(true);
-        showToast("Contact saved!");
-        setTimeout(() => setSaved(false), 2000);
-        return;
-      }
-    }
-    downloadVCard();
-    showToast("Opening contacts...");
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
-  };
 
   const handleShare = () => {
     const shareText = `Check out ${BUSINESS.name} — ${BUSINESS.tagline} (Since ${BUSINESS.established})\n${BUSINESS.website}\n\n📞 ${BUSINESS.phone} · ${BUSINESS.usedCamera} · ${BUSINESS.service}\n📍 ${BUSINESS.location.full}`;
@@ -155,14 +136,15 @@ function HomeContent() {
             <ChevronRight className="w-4 h-4 text-gray-300 flex-shrink-0" />
           </a>
 
-          {/* Save contact */}
-          <button
-            onClick={handleSaveContact}
+          {/* Save contact — real <a> link for iOS Safari compatibility */}
+          <a
+            href="/contact.vcf"
+            onClick={() => { setSaved(true); showToast("Opening contacts..."); setTimeout(() => setSaved(false), 2000); }}
             className="lux-btn-primary ripple w-full max-w-[340px] flex items-center justify-center gap-2.5 text-white rounded-2xl py-3.5 font-bold text-[14px] mb-2.5"
           >
             {saved ? <Check className="w-5 h-5" /> : <UserPlus className="w-5 h-5" />}
-            {saved ? "Contact Saved!" : "Save Contact"}
-          </button>
+            {saved ? "Opening..." : "Save Contact"}
+          </a>
 
           {/* WhatsApp + Share + QR */}
           <div className="flex items-center gap-2.5 w-full max-w-[340px] mb-5">

@@ -25,8 +25,9 @@ export async function GET() {
   return new Response(vcard, {
     headers: {
       "Content-Type": "text/vcard;charset=utf-8",
-      "Content-Disposition": 'attachment; filename="CameraScan.vcf"',
+      "Content-Disposition": 'inline; filename="CameraScan.vcf"',
       "Cache-Control": "no-cache, no-store, must-revalidate",
+      "X-Content-Type-Options": "nosniff",
     },
   });
 }
